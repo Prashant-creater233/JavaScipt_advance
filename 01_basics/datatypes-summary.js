@@ -48,3 +48,28 @@ console.log(typeof bigNumber); // bigint
 console.log(typeof heros); // object
 console.log(typeof myObj); // object
 console.log(typeof myFunction); // function
+
+
+
+
+
+
+//  Memory Allocation in JS
+// 1. Stack Memory (Primitive Data Types)
+// 2. Heap Memory (Non-Primitive Data Types)
+
+let myName = "Prashant"; // stored in stack memory
+
+let anotherName = myName; // stored in stack memory
+anotherName = "Kumar"; // stored in stack memory
+
+console.log(myName); // Prashant 
+console.log(anotherName); // Kumar
+
+let userOne = { name: "Prashant", age: 22 }; // stored in heap memory
+let userTwo = userOne; // stored in heap memory
+
+userTwo.name = "Kumar";
+
+console.log(userOne.name); // Kumar
+console.log(userTwo.name); // Kumar
