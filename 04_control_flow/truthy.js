@@ -43,3 +43,4 @@ val1 = null ?? 25 ?? 30
 
 const icePrice = 100
 icePrice <= 80 ? console.log("less than 80") : console.log("more than 80")
+
