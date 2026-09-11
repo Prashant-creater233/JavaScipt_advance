@@ -1,0 +1,59 @@
+body {
+    background-color: #212121;
+    color: #fff;
+}
+
+.container {
+    width: 450px;
+    height: 550px;
+    background-color: grey;
+    padding-left: 30px;
+    margin-left: 35%;
+}
+
+h1 {
+    padding-left: 80px;
+    padding-top: 25px;
+}
+
+form {
+    padding-top: 30px;
+}
+
+#height {
+    width: 150px;
+    height: 20px;
+    margin-left: 20px;
+}
+
+#weight {
+    width: 150px;
+    height: 20px;
+    margin-left: 15px;
+}
+
+button {
+    width: 120px;
+    height: 35px;
+    margin-left: 105px;
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+#results {
+    font-size: 25px;
+    margin-left: 100px;
+    margin-top: 20px;
+    color: yellowgreen;
+    text-align: center;
+}
+
+#weight-guide {
+    margin-left: 60px;
+    margin-top: 30px;
+}
+
+#weight-guide h3 {
+    font-size: 20px;
+}
