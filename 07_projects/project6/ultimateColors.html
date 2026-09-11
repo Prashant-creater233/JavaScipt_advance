@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Number Guessing Game</title>
+
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            background-color: #eee;
+            color: #000;
+            padding: 8px 20px;
+            margin: 0 5px;
+            border: 1px solid #777;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Start should change the Background color every second
+    </h1>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    // generate a random number
+
+    const randomColor = function(){
+        const hex = "0123456789ABCDEF"
+        let color = '#'
+        for (let i=0; i<6; i++){
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color
+    };
+
+
+    let intervalId;
+    const startChangingColor = function(){
+
+        if(!intervalId) {
+            intervalId = setInterval(changeBgcolor, 1000)
+        }
+
+        function changeBgcolor(){
+            document.body.style.backgroundColor = randomColor();
+        }
+    }
+    const stopChangingColor = function(){
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+
+    document.querySelector('#start').addEventListener('click', startChangingColor)
+
+    document.querySelector('#stop').addEventListener('click', stopChangingColor)
+</script>
+</html>

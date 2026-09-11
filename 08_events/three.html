@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript from CwC</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(str){ // pass as a third parameter str
+        console.log(str, Date.now())
+    }
+
+    const intervalId = setInterval(sayDate, 1000, "hii") // pass as a third parameter
+
+    // clearInterval(intervalId)
+
+    // start and stop setInterval
+    const startInterval = document.querySelector('#start').addEventListener('click', function(){
+        const intervalId = setInterval(sayDate, 1000, "hii")
+    })
+
+    const endInterval = document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(intervalId)
+    })
+
+
+</script>
+</html>
