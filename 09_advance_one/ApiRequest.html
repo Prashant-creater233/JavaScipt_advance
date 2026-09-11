@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Card</title>
+
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #card {
+            width: 300px;
+            padding: 25px;
+            text-align: center;
+            background-color: #333;
+            border-radius: 15px;
+            display: none;
+        }
+
+        #image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 15px;
+        }
+
+        #showBtn {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button id="showBtn">Show GitHub Card</button>
+
+        <div id="card">
+            <h1 id="follower"></h1>
+            <img id="image" src="" alt="GitHub Profile">
+        </div>
+    </div>
+
+    <script>
+
+        const card = document.querySelector('#card');
+        const follower = document.querySelector('#follower');
+        const image = document.querySelector('#image');
+        const showBtn = document.querySelector('#showBtn');
+
+        const requestUrl =
+            'https://api.github.com/users/Prashant-creater233';
+
+        showBtn.addEventListener('click', function () {
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('GET', requestUrl);
+
+            xhr.onreadystatechange = function () {
+
+                console.log(xhr.readyState);
+
+                if (xhr.readyState === 4) {
+
+                    const data = JSON.parse(this.responseText);
+
+                    console.log(data);
+                    console.log(typeof data);
+
+                    console.log(data.followers);
+                    console.log(data.avatar_url);
+
+                    // Card show
+                    card.style.display = 'block';
+
+                    // Followers show
+                    follower.innerHTML = `Followers: ${data.followers}`;
+
+                    // Avatar image show
+                    image.src = data.avatar_url;
+                }
+            };
+
+            xhr.send();
+        });
+
+    </script>
+
+</body>
+
+</html>
