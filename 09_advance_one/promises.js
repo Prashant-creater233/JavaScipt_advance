@@ -99,3 +99,5 @@ fetch('https://jsonplaceholder.typicode.com/users')
     console.log(data)
 })
 .catch((error) => console.log(error))
+
+// fetch ke liya ek spectial task Queue banti ha Microtask Queue is queue ki priority sabse jyada hoti ha
